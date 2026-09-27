@@ -1,80 +1,75 @@
 import Image from "next/image";
-
-const profile = {
-  name: "Erika Manzano",
-  role: "Front-end Developer",
-  location: "Manila, Philippines",
-  email: "reformanzo.erika@gmail.com",
-  bio: "I design and build calm, reliable web products — from polished interfaces to the APIs behind them. Currently open to freelance and full-time roles.",
-  skills: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "PostgreSQL"],
-  links: [
-    { label: "GitHub", href: "https://github.com" },
-    { label: "LinkedIn", href: "https://linkedin.com" },
-    { label: "Email", href: "mailto:jordan.hale@example.com" },
-  ],
-};
+import Reveal from "@/components/Reveal";
+import { site } from "@/data/site";
 
 export default function PersonalDetails() {
   return (
-    <section className="w-full max-w-4xl">
-      <article className="overflow-hidden rounded-3xl border border-zinc-200/80 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-950">
-        <div className="grid gap-0 md:grid-cols-[minmax(0,18rem)_1fr]">
-          <div className="relative aspect-[3/4] bg-zinc-200 md:aspect-auto md:min-h-full dark:bg-zinc-800">
-            <Image
-              src="/dummy-portrait.png"
-              alt={`Portrait of ${profile.name}`}
-              fill
-              priority
-              className="object-cover"
-              sizes="(min-width: 768px) 18rem, 100vw"
-            />
-          </div>
+    <section
+      id="home"
+      className="relative overflow-hidden bg-linear-to-b from-cream via-surface to-lilac/30"
+    >
+      <div className="hero-blob pointer-events-none absolute -top-32 -left-24 size-96 rounded-full bg-coral/20 blur-3xl" />
+      <div className="hero-blob-delay pointer-events-none absolute -right-24 -bottom-32 size-[28rem] rounded-full bg-violet/20 blur-3xl" />
 
-          <div className="flex flex-col justify-center gap-6 px-6 py-8 sm:px-10 sm:py-12">
-            <div className="space-y-3">
-              <p className="text-sm font-medium tracking-wide text-zinc-500 uppercase dark:text-zinc-400">
-                Portfolio
-              </p>
-              <h1 className="text-3xl font-semibold tracking-tight text-zinc-950 sm:text-4xl dark:text-zinc-50">
-                {profile.name}
-              </h1>
-              <p className="text-lg text-zinc-600 dark:text-zinc-300">
-                {profile.role}
-              </p>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400">
-                {profile.location}
-              </p>
+      <Reveal className="relative mx-auto max-w-7xl px-4 py-20 sm:px-8 lg:py-28">
+        <article className="overflow-hidden rounded-[2rem] border border-violet/10 bg-surface shadow-xl">
+          <div className="grid gap-0 md:grid-cols-[minmax(0,20rem)_1fr]">
+            <div className="relative aspect-4/3 bg-lilac/30 md:aspect-auto md:min-h-full">
+              <Image
+                src="/Erika-portrait.jpg"
+                alt={`Portrait of ${site.name}`}
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 768px) 20rem, 100vw"
+              />
             </div>
 
-            <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              {profile.bio}
-            </p>
+            <div className="flex flex-col justify-center gap-6 px-6 py-10 sm:px-10 sm:py-14">
+              <div className="space-y-3">
+                <p className="text-sm font-semibold tracking-wide text-violet uppercase">
+                  Portfolio
+                </p>
+                <h1 className="name-shine font-display bg-linear-to-r from-coral via-violet to-teal bg-clip-text text-4xl font-semibold tracking-tight text-transparent sm:text-5xl">
+                  {site.name}
+                </h1>
+                <p className="text-lg text-ink/80">{site.role.join(" · ")}</p>
+                <p className="text-sm text-ink/55">{site.location}</p>
+              </div>
 
-            <ul className="flex flex-wrap gap-2">
-              {profile.skills.map((skill) => (
-                <li
-                  key={skill}
-                  className="rounded-full border border-zinc-200 bg-zinc-50 px-3 py-1 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
-                >
-                  {skill}
-                </li>
-              ))}
-            </ul>
+              <p className="max-w-xl text-base leading-7 text-ink/75">
+                {site.bio}
+              </p>
 
-            <div className="flex flex-wrap gap-3 pt-2">
-              {profile.links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="inline-flex h-11 items-center rounded-full bg-zinc-950 px-5 text-sm font-medium text-white transition-colors hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-200"
-                >
-                  {link.label}
-                </a>
-              ))}
+              <ul className="flex flex-wrap gap-2">
+                {site.skills.map((skill) => (
+                  <li
+                    key={skill}
+                    className="rounded-full border border-violet/15 bg-cream px-3 py-1 text-sm text-ink/80"
+                  >
+                    {skill}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-3 pt-2">
+                {site.links.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    {...(link.href.startsWith("http")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : null)}
+                    className="inline-flex h-11 items-center rounded-full bg-linear-to-r from-coral to-violet px-5 text-sm font-semibold text-white shadow-lg shadow-coral/20 transition hover:brightness-110"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </Reveal>
     </section>
   );
 }
