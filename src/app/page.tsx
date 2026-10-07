@@ -1,11 +1,25 @@
+import AboutMe from "@/components/AboutMe";
+import Contact from "@/components/Contact";
+import Feedback from "@/components/Feedback";
+import KeyCapabilities from "@/components/KeyCapabilities";
 import PersonalDetails from "@/components/PersonalDetails";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
+import WorkExperiences from "@/components/WorkExperiences";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center bg-zinc-100 px-4 py-16 font-sans dark:bg-black sm:px-8">
-      <main className="flex w-full flex-col items-center">
+    <>
+      <SiteHeader />
+      <main className="flex-1">
         <PersonalDetails />
+        <AboutMe />
+        <KeyCapabilities />
+        <WorkExperiences />
+        <Feedback />
+        <Contact />
       </main>
-    </div>
+      <SiteFooter />
+    </>
   );
 }
