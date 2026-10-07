@@ -10,7 +10,7 @@ export const site = {
   links: [
     { label: "GitHub", href: "https://github.com/erikareformado" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/erika-reformado-398b4b188" },
-    { label: "Email", href: "mailto:reformanzo.erika@gmail.com" },
+    { label: "Email", href: "mailto:reformado.erika@gmail.com" },
   ],
 };
 
