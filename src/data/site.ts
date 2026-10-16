@@ -2,7 +2,7 @@ export const site = {
   name: "Erika Manzano",
   role: ["Front-end Developer", "Salesforce Developer"],
   location: "Laguna, Philippines",
-  email: "reformanzo.erika@gmail.com",
+  email: "reformado.erika@gmail.com",
   summary:
     "Front-end and Salesforce developer with 10+ years of experience building scalable web and enterprise applications.",
   bio: "I’m a results-driven Software Developer with 10+ years of experience building scalable web and enterprise applications. My expertise includes React, TypeScript, Salesforce, backend development, API integration, and automation. I’m passionate about solving complex problems, improving software quality, and leveraging modern technologies to deliver reliable, maintainable solutions.",
