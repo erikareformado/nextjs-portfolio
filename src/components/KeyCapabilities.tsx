@@ -26,7 +26,7 @@ const capabilities = [
     ),
   },
   {
-    title: "Software Development",
+    title: "Saleforce Development",
     description:
       "Developing and enhancing Salesforce solutions using Apex, Lightning Components, LWC, Flow, SOQL, and Salesforce automation.",
     accent: "border-coral/30 shadow-coral/10",
